@@ -1,70 +1,90 @@
-/*==================================
-             FONKSIYONLAR
-=================================*/
+/*============================
+           FONKSİYONLAR
+==================*/
 
-//! 1.yontem:function declaration
-//DECLARATION yontemi ile fonksiyonun tanimlanmasi cagrilmasindan
-//once veya sonra yazilabilir
-
+//! 1. YÖNTEM: FUNCTİON DECLARATİON
+//DECLARATİON yöntemi ile fonksiyonun tanımlanması çağırılmasından önce veya sonra olabilir
 
 
+//fonksiyonun tanımlanması
+// function yazdirAd()
+// {
+//  console.log("Hakan");
+// }
+// //fonksiyonun çağırılması
+// yazdirAd();//hakan
+// //ornek: klavyeden girilen sayının tek mi çift mi olduğunu gösteren bir fonk yazınız
 
+// const sayiniz=prompt("sayı giriniz");
 
+//  console.log(tekCift(sayiniz));
+// function tekCift(sayiniz) {
+//  return sayiniz%2==0 ? `${sayiniz} çifttir`:`${sayiniz} tektir`
+// }
 
-//fonksiyonun tanimlanmasi sonra
-function yazdirAd(){
-    console.log("Hakan");
+//! 2. YÖNTEM : FUNCTİON EXPRESSION (bu yöntem daha yaygın)
+//ornek1)
+const tekCift1= function (sayi){
+  return sayi%2==0 ? "CİFT" :"TEK";
 }
-//fonksiyonun cagrilmasi 
-yazdirAd();//hakan 
-//ornek : klavyeden girilen sayinin tek mi cift mi oldgunu 
-// gosteren bir fonk yaziniz
-
-const sayiniz=prompt("sayi giriniz");
-
-console.log(tekCift(sayiniz));
+console.log(tekCift1(5));  
 
 
-function tekCift(sayimiz) {
-
-
- return sayimiz%2==0?`${sayimiz}cifttir`:`${sayimiz}tektir`
-    
-}
-
-//!2.YONTEM:FUNCTION EXPRESSION (bu yontem daha yaygin)
-
-const tekCift1=function(sayi) {
-return sayi%2==0?"CIFT":"TEK";
-}
-console.log(tekCift1(5));
-
-
-//ornek2: verilen 3 sayidan en buyuk sayiyi bulma
+//ornek2      verilen 3 sayıdan en büyük sayıyı bulma:
 
 let buyukBul=function(a,b,c) {
-    let enBuyuk;
 
-    if(a>b&& a>c) {enBuyuk=a;
-}else if(b>c&& b>a){
-    enBuyuk=b;
-}else if(c>a&& c>b){
-    enBuyuk=c;
+ let enBuyuk;
+if(a>b && a>c) {
+   enBuyuk=a;
+  }
+  else if (b>c && b>a) {
+   enBuyuk=b;
+  }
+else {
+ enBuyuk=c;
 } return enBuyuk;
 }
-console.log(buyukBul(5,8,9));
+ console.log(buyukBul(5, 8, 3));
+ //! 3. YÖNTEM : FUNCTİON ARROW (ok) 
 
-//! 3.YONTEM:FUNCTION ARROW (ok)
+ //const ciftMi=(sayi) => (sayi%2==0 ? "cift" : "tek");
+  
+ const ciftMi = (num) => (num % 2 == 0 ? `${num} = Cift` : `${num} = Tek`);
+  console.log(ciftMi(7));
 
-const ciftMi=(num)=>(num%2==0?`${num}=Cift`:`${num}=Tek`);
+  //ornek  
 
-console.log("Sayi"+" "+ ciftMi(7));
+  const taban =prompt("taban gir");
+  const us = prompt("us giriniz");
 
-// ornek2
+  const ustAl= (taban,us) => taban**us;
 
-const taban=prompt("taban gir");
-const us=prompt("us giriniz");
+   console.log(ustAl(taban, us));
 
-const usAl=(taban,us)=>taban**us;
 
-console.log(usAl(taban,us));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
